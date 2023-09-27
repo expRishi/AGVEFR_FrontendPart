@@ -1,19 +1,19 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 
-const App = () => {
+const ProductList = () => {
   return (
     <View style={styles.container}>
-      <Text>This is App.js screen</Text>
+      <Text>This is ProductList screen</Text>
     </View>
   )
 }
 
-export default App
+export default ProductList
 
 const styles = StyleSheet.create({
-  container: {
-    alignItems: "center",
-    paddingTop: 450,
-  },
+    container: {
+        alignItems: "center",
+        paddingTop: 450,
+    },
 })
