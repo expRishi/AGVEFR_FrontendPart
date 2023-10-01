@@ -1,10 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { View, StyleSheet } from 'react-native'
 import React from 'react'
+import Home from './screens/Home'
+
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>This is App.js screen</Text>
+    <View>
+      <Home />
     </View>
   )
 }
@@ -13,7 +15,6 @@ export default App
 
 const styles = StyleSheet.create({
   container: {
-    alignItems: "center",
-    paddingTop: 450,
-  },
-})
+      
+    },
+  })
