@@ -1,26 +1,27 @@
-import { FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
+import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
+import Widget from './Widget'
 
-    const names = [
-        {
-            no : "1",
-            name: "Hardware",
-        },
-        {
-            no : "2",
-            name: "Paint",
-        },
-        {
-            no : "3",
-            name: "Furniture",
-        },
-        {
-            no : "4",
-            name : "Vegetable",
-        },
-    ]
+    // const names = [
+    //     {
+    //         no : "1",
+    //         name: "Hardware",
+    //     },
+    //     {
+    //         no : "2",
+    //         name: "Paint",
+    //     },
+    //     {
+    //         no : "3",
+    //         name: "Furniture",
+    //     },
+    //     {
+    //         no : "4",
+    //         name : "Vegetable",
+    //     },
+    // ]
 
 const Category = () => {
   return (
@@ -122,7 +123,7 @@ const Category = () => {
 
 
 
-
+      <ScrollView style={styles.listView}>
       <View style={styles.container1}>
         <View style={styles.box}>
             <TouchableOpacity>
@@ -177,7 +178,7 @@ const Category = () => {
             </TouchableOpacity>
         </View>
       </View>
-      {/* <View style={styles.container1}>
+      <View style={styles.container1}>
             <View style={styles.box}>
                 <TouchableOpacity>
                     <FontAwesome5 name="chair" size={100} color="grey" />
@@ -194,7 +195,45 @@ const Category = () => {
                     </View>
                 </TouchableOpacity>
             </View>
-        </View> */}
+        </View>
+        <View style={styles.container1}>
+            <View style={styles.box}>
+                <TouchableOpacity>
+                    <FontAwesome5 name="chair" size={100} color="grey" />
+                    <View style={styles.textView}>
+                        <Text style={styles.textStyle}>Furniture</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.box}>
+                <TouchableOpacity>
+                    <FontAwesome5 name="carrot" size={97} color="grey"/>
+                    <View style={styles.textView}>
+                        <Text style={styles.textStyle}>Vegetable</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+        </View>
+        <View style={styles.container1}>
+            <View style={styles.box}>
+                <TouchableOpacity>
+                    <FontAwesome5 name="chair" size={100} color="grey" />
+                    <View style={styles.textView}>
+                        <Text style={styles.textStyle}>Furniture</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.box}>
+                <TouchableOpacity>
+                    <FontAwesome5 name="carrot" size={97} color="grey"/>
+                    <View style={styles.textView}>
+                        <Text style={styles.textStyle}>Vegetable</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+        </View>
+      </ScrollView>
+      <Widget />
     </View>
   )
 }
@@ -207,19 +246,19 @@ const styles = StyleSheet.create({
         fontWeight: "900",
     },
     container: {
-        // borderColor: 'yellow',
-        // borderWidth: 5,
-        height: "89%",
-        //flex: 1,
+        //borderColor: 'yellow',
+        //borderWidth: 5,
+        //height: "89%",
+        flex: 1,
         //width: "100%",
         alignItems: "center",
     },
     container1: {
-        // borderColor: 'red',
-        // borderWidth: 5,
-        height: "25%",
+        //borderColor: 'red',
+        //borderWidth: 5,
+        //height: "25%",
         width: "100%",
-        marginTop: 50,
+        marginVertical: 10,
         flexDirection: "row",
         justifyContent: "space-evenly",
     },
@@ -235,7 +274,7 @@ const styles = StyleSheet.create({
     box: {
         // borderColor: 'black',
         // borderWidth: 5,
-        //textAlign: "center"
+        //textAlign: "center",
     },
     textView: {
         alignItems: "center",
@@ -245,8 +284,21 @@ const styles = StyleSheet.create({
         fontSize: 25,
         fontWeight: "900",
     },
-    listStyle: {
-        padding: 2,
-        margin: 2,
+    // listStyle: {
+    //     padding: 2,
+    //     margin: 2,
+    // },
+    listView: {
+        flex: 1,
+        //borderColor: 'red',
+        //borderWidth: 5,
+        marginTop: 20,
+        marginBottom: 50,
+    },
+    navView : {
+        borderColor: 'red',
+        borderWidth: 5,
+        //position: "absolute",
+        flex: 1,
     },
 })

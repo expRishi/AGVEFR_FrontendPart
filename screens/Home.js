@@ -3,7 +3,7 @@ import React from 'react'
 import Title from '../components/Title'
 import SearchBar from '../components/SearchBar'
 import Category from '../components/Category'
-import Widget from '../components/Widget'
+//import Widget from '../components/Widget'
 //import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import EvilIcon from 'react-native-vector-icons/EvilIcons'
 
@@ -23,7 +23,6 @@ const Home = () => {
         </View>
         <View style={styles.bodyView}>
           <Category />
-          <Widget />
         </View>
         {/* <Icon name="menu" size={200} /> */}
     </View>
@@ -57,8 +56,8 @@ const styles = StyleSheet.create({
         // borderWidth: 3,
       },
       bodyView: {
-        //borderColor: 'black',
-        //borderWidth: 3,
+        // borderColor: 'black',
+        // borderWidth: 3,
         //height: '85%',
         flex: 1,
         //justifyContent: "space-evenly",
