@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Title from '../components/Title'
 import EvilIcon from 'react-native-vector-icons/EvilIcons'
 import SearchBar from '../components/SearchBar'
 import SellersList from '../components/SellersList'
@@ -9,9 +8,6 @@ const Sellers = () => {
   return (
     <View style={styles.container}>
         <View style={styles.headerView}>
-            <View style={styles.titleView}>
-                <Title />
-            </View>
             <View style={styles.searchIconView}>
               <EvilIcon name="search" size={30} color="black"/>
             </View>
@@ -22,10 +18,6 @@ const Sellers = () => {
         <View style={styles.bodyView}>
           <SellersList />
         </View>
-        {/* <View style={styles.bodyView}>
-          <Category />
-        </View> */}
-        {/* <Icon name="menu" size={200} /> */}
     </View>
   )
 }
@@ -35,13 +27,14 @@ export default Sellers
 const styles = StyleSheet.create({
     container: {
       height: "100%",
+      backgroundColor: "#f8f9fa",
     },
     headerView: {
       // borderColor: 'yellow',
       // borderWidth: 5,
-      height: 130,
+      height: 120,
       flexDirection: "row",
-      justifyContent: "space-evenly",
+      justifyContent: "center",
     },
     titleView: {
       //  borderColor: 'black',

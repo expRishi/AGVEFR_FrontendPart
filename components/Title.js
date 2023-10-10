@@ -4,7 +4,7 @@ import React from 'react'
 const Title = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>AGVEFR</Text>
+      <Text style={styles.title}>AgVeFR</Text>
     </View>
   )
 }
@@ -20,5 +20,11 @@ const styles = StyleSheet.create({
     title: {
         fontSize: 40,
         fontWeight: "900",
+        color: "#000000",
+        textShadowColor: "#00b4d8", // Shadow color
+        textShadowOffset: { width:0, height: 1 }, // Shadow offset
+        textShadowRadius: 6, // Shadow radius
+        //borderColor: 'blue', // Border color
+        //borderWidth: 2,
     },
 })

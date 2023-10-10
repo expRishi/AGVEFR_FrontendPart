@@ -16,7 +16,7 @@ const SellersList = () => {
                 <Image 
                     style={styles.imgStyle}
                     source={{
-                    uri: "https://englishtribuneimages.blob.core.windows.net/gallary-content/2023/1/2023_1$largeimg_584723932.jpg",
+                    uri: "https://lh5.googleusercontent.com/p/AF1QipOHUsVLF8CDB-dj7fk0dWXDzm5gn1Z1_djjyO_Z",
                     }}
                 />
             </View>
@@ -36,16 +36,16 @@ const SellersList = () => {
                 <Image 
                     style={styles.imgStyle}
                     source={{
-                    uri: "https://englishtribuneimages.blob.core.windows.net/gallary-content/2023/1/2023_1$largeimg_584723932.jpg",
+                    uri: "https://content.jdmagicbox.com/comp/chandigarh/90/0172p172std6190/catalogue/sagar-paint-and-hardware-store-chandigarh-sector-18d-chandigarh-hardware-shops-20bo4.jpg?clr=",
                     }}
                 />
             </View>
             <View style={styles.box}>
                 <TouchableOpacity>
                     <View style={styles.storeView}>
-                        <Text style={styles.text}>Balaji Store</Text>
+                        <Text style={styles.text}>Sagar Paint & Hardware</Text>
                         <Ionicon name="location" size={20} color="grey" />
-                        <Text style={styles.distanceText}>1.4 km</Text>
+                        <Text style={styles.distanceText}>1.1 km</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -56,16 +56,16 @@ const SellersList = () => {
                 <Image 
                     style={styles.imgStyle}
                     source={{
-                    uri: "https://englishtribuneimages.blob.core.windows.net/gallary-content/2023/1/2023_1$largeimg_584723932.jpg",
+                    uri: "https://content.jdmagicbox.com/comp/guwahati/l8/9999px361.x361.110111213646.a2l8/catalogue/right-choice-ganeshguri-guwahati-hardware-shops-1qftjslnqm.jpg?clr=",
                     }}
                 />
             </View>
             <View style={styles.box}>
                 <TouchableOpacity>
                     <View style={styles.storeView}>
-                        <Text style={styles.text}>Balaji Store</Text>
+                        <Text style={styles.text}>Right Choice</Text>
                         <Ionicon name="location" size={20} color="grey" />
-                        <Text style={styles.distanceText}>1.4 km</Text>
+                        <Text style={styles.distanceText}>800 m</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -76,16 +76,16 @@ const SellersList = () => {
                 <Image 
                     style={styles.imgStyle}
                     source={{
-                    uri: "https://englishtribuneimages.blob.core.windows.net/gallary-content/2023/1/2023_1$largeimg_584723932.jpg",
+                    uri: "https://content.jdmagicbox.com/comp/purnia/p4/9999p6454.6454.170612162707.j6p4/catalogue/sangeeta-furniture-s-fittings-gulabbagh-purnia-hardware-shops-wcm1wdzskm.jpg",
                     }}
                 />
             </View>
             <View style={styles.box}>
                 <TouchableOpacity>
                     <View style={styles.storeView}>
-                        <Text style={styles.text}>Balaji Store</Text>
+                        <Text style={styles.text}>Sangeeta Furniture</Text>
                         <Ionicon name="location" size={20} color="grey" />
-                        <Text style={styles.distanceText}>1.4 km</Text>
+                        <Text style={styles.distanceText}>2.1 km</Text>
                     </View>
                 </TouchableOpacity>
             </View>
@@ -96,16 +96,36 @@ const SellersList = () => {
                 <Image 
                     style={styles.imgStyle}
                     source={{
-                    uri: "https://englishtribuneimages.blob.core.windows.net/gallary-content/2023/1/2023_1$largeimg_584723932.jpg",
+                    uri: "https://content3.jdmagicbox.com/comp/gurgaon/u1/011pxx11.xx11.160901164809.t9u1/catalogue/shri-ram-hardware-store-imt-manesar-gurgaon-hardware-shops-nisz4x95a1.jpg",
                     }}
                 />
             </View>
             <View style={styles.box}>
                 <TouchableOpacity>
                     <View style={styles.storeView}>
-                        <Text style={styles.text}>Balaji Store</Text>
+                        <Text style={styles.text}>Shri Ram Store</Text>
                         <Ionicon name="location" size={20} color="grey" />
-                        <Text style={styles.distanceText}>1.4 km</Text>
+                        <Text style={styles.distanceText}>3.3 km</Text>
+                    </View>
+                </TouchableOpacity>
+            </View>
+        </View>
+
+        <View style={styles.storeContainer}>
+            <View style={styles.imgView}>
+                <Image 
+                    style={styles.imgStyle}
+                    source={{
+                    uri: "https://content.jdmagicbox.com/comp/dehradun/g8/9999px135.x135.131206162559.n7g8/catalogue/khanuja-hardware-store-dehradun-city-dehradun-hardware-shops-atpr8d0.jpg",
+                    }}
+                />
+            </View>
+            <View style={styles.box}>
+                <TouchableOpacity>
+                    <View style={styles.storeView}>
+                        <Text style={styles.text}>Khanuja Hardware</Text>
+                        <Ionicon name="location" size={20} color="grey" />
+                        <Text style={styles.distanceText}>1.7 km</Text>
                     </View>
                 </TouchableOpacity>
             </View>

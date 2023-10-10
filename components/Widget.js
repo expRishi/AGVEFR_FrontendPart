@@ -2,8 +2,9 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
+import Ionicon from 'react-native-vector-icons/Ionicons'
 
-const Widget = () => {
+const Widget = ({navigation}) => {
   return (
     <View style={styles.container}>
       
@@ -20,8 +21,8 @@ const Widget = () => {
       </View>
 
       <View style={styles.box}>
-        <TouchableOpacity>
-            <AntDesign name="shoppingcart" size={30} color="black" />
+        <TouchableOpacity onPress={()=> navigation.navigate("UserDetails")}>
+            <Ionicon name="person-outline" size={30} color="black" />
         </TouchableOpacity>
       </View>
 
@@ -42,7 +43,7 @@ const styles = StyleSheet.create({
         //borderColor: 'red',
         //borderWidth: 5,
         position: "absolute",
-        bottom: 0,
+        bottom: 5,
         flex: 1,
         flexDirection: "row",
         justifyContent: "space-evenly",

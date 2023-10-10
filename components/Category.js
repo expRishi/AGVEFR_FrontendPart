@@ -2,7 +2,7 @@ import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View } from '
 import React from 'react'
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
-import Widget from './Widget'
+import FontAwesome from 'react-native-vector-icons/FontAwesome'
 
     // const names = [
     //     {
@@ -23,218 +23,85 @@ import Widget from './Widget'
     //     },
     // ]
 
-const Category = () => {
+const Category = ({navigation}) => {
+  console.log(navigation);
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Categories</Text>
-      {/* <FlatList 
-        style={styles.listStyle}
-        keyExtractor={(index) => {
-            return index.no;
-        }}
-        data={names} renderItem= {( {item} ) => {
-            //console.log(item.name);
-                return (
-
-                    <View style={styles.container1}>
-                        <View style={styles.box}>
-                                <TouchableOpacity>
-                                    <MaterialCommunityIcon name="hammer-screwdriver" size={100} color="grey" />
-                                    <View style={styles.textView}>
-                                        <Text style={styles.textStyle}>Hardware</Text>
-                                    </View>
-                                </TouchableOpacity>
-                        </View>
-                        <View style={styles.box}>
-                                <TouchableOpacity>
-                                    <FontAwesome5 name="paint-roller" size={97} color="grey"/>
-                                    <View style={styles.textView}>
-                                        <Text style={styles.textStyle}>Paint</Text>
-                                    </View>
-                                </TouchableOpacity>
-                        </View>
+          <ScrollView style={styles.listView}>
+          <View style={styles.container1}>
+            <View style={styles.box}>
+                <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                    <MaterialCommunityIcon name="hammer-screwdriver" size={100} color="#B0D9B1" />
+                    <View style={styles.textView}>
+                        <Text style={styles.textStyle}>Hardware</Text>
                     </View>
-                    
-                    <View style={styles.container1}>
-                        <View style={styles.box}>
-                            <TouchableOpacity>
-                                <FontAwesome5 name="chair" size={100} color="grey" />
-                                <View style={styles.textView}>
-                                    <Text style={styles.textStyle}>Furniture</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.box}>
-                            <TouchableOpacity>
-                                <FontAwesome5 name="carrot" size={97} color="grey"/>
-                                <View style={styles.textView}>
-                                    <Text style={styles.textStyle}>Vegetable</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
+                </TouchableOpacity>
+            </View>
+            <View style={styles.box}>
+                <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                    <FontAwesome5 name="paint-roller" size={100} color="#B0D9B1"/>
+                    <View style={styles.textView}>
+                        <Text style={styles.textStyle}>Paint</Text>
                     </View>
-
-
-                    <View style={styles.container1}>
-                        <View style={styles.box}>
-                                <TouchableOpacity>
-                                    <MaterialCommunityIcon name="hammer-screwdriver" size={100} color="grey" />
-                                    <View style={styles.textView}>
-                                        <Text style={styles.textStyle}>Hardware</Text>
-                                    </View>
-                                </TouchableOpacity>
+                </TouchableOpacity>
+            </View>
+          </View>
+          <View style={styles.container1}>
+                <View style={styles.box}>
+                    <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                        <FontAwesome5 name="chair" size={100} color="#B0D9B1" />
+                        <View style={styles.textView}>
+                            <Text style={styles.textStyle}>Furniture</Text>
                         </View>
-                        <View style={styles.box}>
-                                <TouchableOpacity>
-                                    <FontAwesome5 name="paint-roller" size={97} color="grey"/>
-                                    <View style={styles.textView}>
-                                        <Text style={styles.textStyle}>Paint</Text>
-                                    </View>
-                                </TouchableOpacity>
-                        </View>
-                    </View>
-                    
-                    <View style={styles.container1}>
-                        <View style={styles.box}>
-                            <TouchableOpacity>
-                                <FontAwesome5 name="chair" size={100} color="grey" />
-                                <View style={styles.textView}>
-                                    <Text style={styles.textStyle}>Furniture</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                        <View style={styles.box}>
-                            <TouchableOpacity>
-                                <FontAwesome5 name="carrot" size={97} color="grey"/>
-                                <View style={styles.textView}>
-                                    <Text style={styles.textStyle}>Vegetable</Text>
-                                </View>
-                            </TouchableOpacity>
-                        </View>
-                    </View>
-                );
-        }}
-      /> */}
-
-
-
-
-
-
-
-
-      <ScrollView style={styles.listView}>
-      <View style={styles.container1}>
-        <View style={styles.box}>
-            <TouchableOpacity>
-                <MaterialCommunityIcon name="hammer-screwdriver" size={100} color="grey" />
-                <View style={styles.textView}>
-                    <Text style={styles.textStyle}>Hardware</Text>
+                    </TouchableOpacity>
                 </View>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.box}>
-            <TouchableOpacity>
-                <FontAwesome5 name="paint-roller" size={97} color="grey"/>
-                <View style={styles.textView}>
-                    <Text style={styles.textStyle}>Paint</Text>
+                <View style={styles.box}>
+                    <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                        <FontAwesome5 name="carrot" size={100} color="#B0D9B1"/>
+                        <View style={styles.textView}>
+                            <Text style={styles.textStyle}>Vegetable</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
-            </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.container1}>
+            </View>
+          <View style={styles.container1}>
             <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="chair" size={100} color="grey" />
+                <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                    <MaterialCommunityIcon name="fruit-watermelon" size={100} color="#B0D9B1" />
                     <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Furniture</Text>
+                        <Text style={styles.textStyle}>Fruit</Text>
                     </View>
                 </TouchableOpacity>
             </View>
             <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="carrot" size={97} color="grey"/>
+                <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                    <MaterialCommunityIcon name="bookshelf" size={100} color="#B0D9B1"/>
                     <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Vegetable</Text>
+                        <Text style={styles.textStyle}>Book</Text>
                     </View>
                 </TouchableOpacity>
             </View>
-        </View>
-      <View style={styles.container1}>
-        <View style={styles.box}>
-            <TouchableOpacity>
-                <MaterialCommunityIcon name="hammer-screwdriver" size={100} color="grey" />
-                <View style={styles.textView}>
-                    <Text style={styles.textStyle}>Hardware</Text>
+          </View>
+          <View style={styles.container1}>
+                <View style={styles.box}>
+                    <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                        <FontAwesome name="shopping-basket" size={100} color="#B0D9B1" />
+                        <View style={styles.textView}>
+                            <Text style={styles.textStyle}>Grocery</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
-            </TouchableOpacity>
-        </View>
-        <View style={styles.box}>
-            <TouchableOpacity>
-                <FontAwesome5 name="paint-roller" size={97} color="grey"/>
-                <View style={styles.textView}>
-                    <Text style={styles.textStyle}>Paint</Text>
+                <View style={styles.box}>
+                    <TouchableOpacity onPress={()=> navigation.navigate("Sellers")}>
+                        <MaterialCommunityIcon name="bottle-tonic" size={100} color="#B0D9B1"/>
+                        <View style={styles.textView}>
+                            <Text style={styles.textStyle}>Water Jar</Text>
+                        </View>
+                    </TouchableOpacity>
                 </View>
-            </TouchableOpacity>
-        </View>
-      </View>
-      <View style={styles.container1}>
-            <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="chair" size={100} color="grey" />
-                    <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Furniture</Text>
-                    </View>
-                </TouchableOpacity>
             </View>
-            <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="carrot" size={97} color="grey"/>
-                    <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Vegetable</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.container1}>
-            <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="chair" size={100} color="grey" />
-                    <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Furniture</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="carrot" size={97} color="grey"/>
-                    <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Vegetable</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-        </View>
-        <View style={styles.container1}>
-            <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="chair" size={100} color="grey" />
-                    <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Furniture</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-            <View style={styles.box}>
-                <TouchableOpacity>
-                    <FontAwesome5 name="carrot" size={97} color="grey"/>
-                    <View style={styles.textView}>
-                        <Text style={styles.textStyle}>Vegetable</Text>
-                    </View>
-                </TouchableOpacity>
-            </View>
-        </View>
-      </ScrollView>
-      <Widget />
-    </View>
+          </ScrollView>
+</View>
   )
 }
 
@@ -258,7 +125,7 @@ const styles = StyleSheet.create({
         //borderWidth: 5,
         //height: "25%",
         width: "100%",
-        marginVertical: 10,
+        marginVertical: 25,
         flexDirection: "row",
         justifyContent: "space-evenly",
     },
@@ -272,15 +139,17 @@ const styles = StyleSheet.create({
     //     justifyContent: "space-evenly",
     // },
     box: {
-        // borderColor: 'black',
-        // borderWidth: 5,
+        borderColor: 'grey',
+        borderWidth: 0.7,
+        borderRadius: 40,
+        padding: 25,
         //textAlign: "center",
     },
     textView: {
         alignItems: "center",
     },
     textStyle: {
-        color: "grey",
+        color: "black",
         fontSize: 25,
         fontWeight: "900",
     },
@@ -292,7 +161,7 @@ const styles = StyleSheet.create({
         flex: 1,
         //borderColor: 'red',
         //borderWidth: 5,
-        marginTop: 20,
+        //marginTop: 5,
         marginBottom: 50,
     },
     navView : {
