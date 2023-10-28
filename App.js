@@ -5,10 +5,14 @@ import Otp from './screens/Otp';
 import Home from './screens/Home';
 import Sellers from './screens/Sellers';
 import BuysAdd from './screens/BuysAdd';
+import MapScreen from './screens/MapScreen';
 import UserDetails from './screens/UserDetails';
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack';
 import AsyncStorage from '@react-native-async-storage/async-storage'
+import { makeRequest } from './config/postData';
+import { BASE_URL } from './config/indexConfig';
+
 
 const Stack = createStackNavigator();
 
@@ -20,10 +24,30 @@ const App = () => {
   useEffect(() => {
     const checkLoginStatus = async () => {
       const token = await AsyncStorage.getItem('token');
-      setInitialRoute(token ? 'BuysAdd' : 'Auth');
+      if (token) {
+        await makeRequest(BASE_URL+'/auth/buyer/me', 'GET', token).then(async (response) => {
+          const addresses = response.addresses
+          if (addresses) {
+            setInitialRoute('Home');
+            await AsyncStorage.setItem('address_id', response.addresses[0].id.toString());
+          } else {
+            setInitialRoute('BuysAdd');
+          }
+        }).catch(
+          error => console.log(error)
+        );
+      } else {
+        setInitialRoute('Auth');
+      }
+      // setInitialRoute(token ? 'BuysAdd' : 'Auth');
+      // await makeRequest(BASE_URL+'/auth/me', 'GET', token).then(async (response) => {
+      //   console.log(response);
+      //   // await AsyncStorage.setItem('address_id', response.id.toString());
+      // });
     };
 
     checkLoginStatus();
+    
   }, []);
 
   if (initialRoute === null) {
@@ -37,6 +61,7 @@ const App = () => {
       <Stack.Screen name="Auth" component={Auth} options={{headerShown:false}} />
       <Stack.Screen name="Otp" component={Otp} options={{headerShown:false}} />
       <Stack.Screen name="BuysAdd" component={BuysAdd} options={{headerShown:false}} />
+      <Stack.Screen name="MapScreen" component={MapScreen} options={{headerShown:false}} />
       <Stack.Screen name="Home" component={Home} options={{headerShown:false}} />
       <Stack.Screen name="Sellers" component={Sellers} options={{headerShown:false}} />
       <Stack.Screen name="UserDetails" component={UserDetails} options={{headerShown:false}} />

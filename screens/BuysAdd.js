@@ -1,7 +1,36 @@
 import { ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 
 const BuysAdd = ({navigation}) => {
+
+    const [name,setName] = useState('');
+    const [num, setNum] = useState('');
+    const [houseno, setHouseno] = useState('');
+    const [street, setStreet] = useState('');
+
+
+    const getDirect = async() => {
+        const URL = 'https://api.distancematrix.ai/maps/api/geocode/json?address='+houseno+',+'+street+',+lachit+nagar,+guwahati&key=1RHlNXtTuPwYDa16e3zAPw4IbDckfnW1vuPAH7uCpJ2K3KVHBF7UUbutgGQju9R7';
+        const res = await fetch(URL);
+        const data = await res.json();
+        console.log(data);
+        // setLat(data.result[0].geometry.location.lat);
+        // setLng(data.result[0].geometry.location.lng);
+        // navigation.navigate("Map", {lat: lat, lng: lng});
+        await navigation.navigate("MapScreen", {
+            lat: data.result[0].geometry.location.lat, 
+            lng: data.result[0].geometry.location.lng,
+            name: name,
+            num: num,
+            houseno: houseno,
+            street: street
+        });
+        // console.log(lat);
+        // console.log(lng);
+    };
+
+
+
   return (
     <ScrollView style={styles.container}>
         <View style={styles.bodyView}>
@@ -11,28 +40,36 @@ const BuysAdd = ({navigation}) => {
                             style={styles.inputStyle}
                             placeholder="Your Name"
                             autoFocus = {true}
-                            caretHidden={true}
+                            //caretHidden={true}
+                            value={name}
+                            onChangeText={setName}
                             //inputMode='numeric'
                         />
                         <TextInput
                             style={styles.inputStyle}
                             placeholder="Phone Number"
-                            autoFocus = {true}
-                            caretHidden={true}
-                            //inputMode='numeric'
+                            //autoFocus = {true}
+                            //caretHidden={true}
+                            value={num}
+                            onChangeText={setNum}
+                            inputMode='numeric'
                         />
                         <TextInput
                             style={styles.inputStyle}
                             placeholder="Flat No./House No."
-                            autoFocus = {true}
-                            caretHidden={true}
+                            //autoFocus = {true}
+                            //caretHidden={true}
+                            value={houseno}
+                            onChangeText={setHouseno}
                             //inputMode='numeric'
                         />
                         <TextInput
                             style={styles.inputStyle}
                             placeholder="Street Name"
-                            autoFocus = {true}
-                            caretHidden={true}
+                            //autoFocus = {true}
+                            //caretHidden={true}
+                            value={street}
+                            onChangeText={setStreet}
                             //inputMode='numeric'
                         />
                         <Text style={styles.textView1}>
@@ -46,7 +83,7 @@ const BuysAdd = ({navigation}) => {
                         </Text>
                         <TouchableOpacity 
                             style={styles.btn}
-                            onPress={()=> navigation.navigate("Home")}
+                            onPress={getDirect}
                         >
                             <Text style={styles.btnText}>Continue</Text>
                         </TouchableOpacity>

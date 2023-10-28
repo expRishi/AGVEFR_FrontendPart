@@ -38,7 +38,7 @@ const Auth = ({navigation}) => {
         }
         console.log(phone);
         setLoading(true);
-        postData(BASE_URL + '/auth/phone?user_phone=' + phone)
+        postData(BASE_URL + '/auth/phone_number?phone_number=' + phone)
         .then((data1) => {
             console.log("data1", data1);
             setLoading(false);

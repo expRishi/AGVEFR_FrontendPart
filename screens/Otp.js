@@ -28,7 +28,7 @@ const Otp = (props) => {
             return;
         }
         setLoading(true);
-        postData(BASE_URL + '/auth/otp?user_phone=' + props.route.params.phone + '&otp=' + otp)
+        postData(BASE_URL + '/auth/buyer/otp?buyer_phone=' + props.route.params.phone + '&otp=' + otp)
         .then(
             async (data) => {
                 console.log(data);

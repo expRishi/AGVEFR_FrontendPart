@@ -2,6 +2,8 @@ import { ScrollView, StyleSheet, Text, View, Image, TouchableOpacity } from 'rea
 import React from 'react'
 import Widget from './Widget'
 import Ionicon from 'react-native-vector-icons/Ionicons'
+import { makeRequest } from '../config/postData'
+import { BASE_URL } from '../config/indexConfig'
 
 const SellersList = () => {
   return (

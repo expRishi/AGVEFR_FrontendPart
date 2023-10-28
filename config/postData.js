@@ -111,13 +111,14 @@ export async function postData(url) {
       method,
       headers: {
         'Content-Type': 'application/json',
-        Authorization: token,
+        token: token,
       },
       body: method === 'GET' ? null : JSON.stringify(data),
     })
-    if (response.ok === false) {
-      throw new Error('something went wrong')
-    }
-    return response.json()
+    .then(response => response.json())
+    .then(result => {
+      return(result);
+  }).catch(error => console.log('error1', error))
+    return(response)
   }
   
