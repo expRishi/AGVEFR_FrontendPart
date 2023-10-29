@@ -46,7 +46,7 @@ const Otp = (props) => {
                 //         login(data.data.token);
                 //     } else {
                         // register the user
-                        props.navigation.navigate("BuysAdd",  {'loginData': data.data});
+                        props.navigation.navigate("BuysAdd");
                         setLoading(false);
                 }
                 // else{

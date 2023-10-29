@@ -1,5 +1,5 @@
 import { FlatList, ScrollView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons'
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5'
 import FontAwesome from 'react-native-vector-icons/FontAwesome'
@@ -39,12 +39,35 @@ const Category = ({ navigation }) => {
         );
     };
 
-    useState(() => {
+    useEffect(() => {
         getCategoryList();
     }, []);
 
-    const Item = ({ name, url }) => (
-        <TouchableOpacity style={styles.box}>
+    //console.log('res',res);
+
+    const gotoNavigation = (name) => {
+        // console.log('name',name);
+        navigation.navigate("Sellers", {name:name});
+    };
+
+    // const getSellersList = async () => {
+    //     const token = await AsyncStorage.getItem('token');
+
+    //     await makeRequest(BASE_URL + '/sellers?category=', 'GET', token).then((response) => {
+    //         //setRes(response);
+    //     }).catch(
+    //         error => console.log(error)
+    //     );
+    // };
+
+
+    // useEffect(() => {
+    //     getSellersList();
+    // }, []);
+
+
+    const Item = ({ name, url}) => (
+        <TouchableOpacity style={styles.box} onPress={()=>{gotoNavigation(name)}}>
             <Image source={{ uri: url }} style={styles.imgStyle} resizeMode="contain" />
             <Text style={styles.textStyle}>{name}</Text>
         </TouchableOpacity>
@@ -106,6 +129,7 @@ const styles = StyleSheet.create({
         width: '50%',
         //height: '100%',
         alignItems: "center",
+        
     },
     imgView: {
         //borderColor: 'red',
@@ -113,6 +137,11 @@ const styles = StyleSheet.create({
         paddingTop: 5,
         // width: 140,
         alignItems: "center",
+        shadowColor: '#7D7C7C',
+        //shadowOffset: { width: -1, height: -1 },
+        shadowOpacity: 2,
+        shadowRadius: 5,
+        elevation: 10,
     },
     imgStyle: {
         //borderColor: 'red',

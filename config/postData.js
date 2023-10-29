@@ -19,7 +19,7 @@ export async function postData(url) {
       .then(result => {
         console.log("result", result);
         return(result);
-    }).catch(error => console.log('error1', error));
+    }).catch(error => console.log('error2', error));
 
     console.log("res", res)
     return(res);

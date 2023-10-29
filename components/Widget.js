@@ -2,6 +2,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import AntDesign from 'react-native-vector-icons/AntDesign'
 import Entypo from 'react-native-vector-icons/Entypo'
+import EvilIcon from 'react-native-vector-icons/EvilIcons'
 import Ionicon from 'react-native-vector-icons/Ionicons'
 
 const Widget = ({navigation}) => {
@@ -9,7 +10,7 @@ const Widget = ({navigation}) => {
     <View style={styles.container}>
       
       <View style={styles.box}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate("Home")}>
             <AntDesign name="home" size={30} color="black" />
         </TouchableOpacity>
       </View>
@@ -21,13 +22,13 @@ const Widget = ({navigation}) => {
       </View>
 
       <View style={styles.box}>
-        <TouchableOpacity onPress={()=> navigation.navigate("UserDetails")}>
-            <Ionicon name="person-outline" size={30} color="black" />
+        <TouchableOpacity>
+            <Ionicon name="cart-outline" size={30} color="black" />
         </TouchableOpacity>
       </View>
 
       <View style={styles.box}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={()=> navigation.navigate("UserDetails")}>
             <Entypo name="menu" size={30} color="black" />
         </TouchableOpacity>
       </View>
